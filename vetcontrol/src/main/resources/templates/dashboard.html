@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Dashboard - VetControl</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body class="bg-white">
+<div class="container mt-5">
+  <div class="alert alert-success text-center">
+    <h4>Bienvenido a VetControl</h4>
+    <p>Sesión iniciada correctamente.</p>
+    <a class="btn btn-danger" th:href="@{/logout}">Cerrar sesión</a>
+  </div>
+</div>
+</body>
+</html>
