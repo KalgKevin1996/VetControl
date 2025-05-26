@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>Iniciar Sesión - VetControl</title>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
-<body>
-
+<body class="bg-light">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow rounded-3">
+                <div class="card-header text-center">
+                    <h4>VetControl - Iniciar Sesión</h4>
+                </div>
+                <div class="card-body">
+                    <form th:action="@{/login}" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Correo electrónico</label>
+                            <input type="email" name="username" id="username" class="form-control" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-primary" type="submit">Iniciar Sesión</button>
+                        </div>
+                    </form>
+                    <div th:if="${param.error}" class="mt-3 text-danger text-center">
+                        Credenciales inválidas.
+                    </div>
+                    <div th:if="${param.logout}" class="mt-3 text-success text-center">
+                        Sesión cerrada correctamente.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
