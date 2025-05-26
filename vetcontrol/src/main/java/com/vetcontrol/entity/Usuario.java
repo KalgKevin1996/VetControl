@@ -39,4 +39,22 @@ public class Usuario {
             joinColumns = @JoinColumn(name = "usuario_id"),
             inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public boolean isHabilitado() {
+        return habilitado;
+    }
+
+    public Set<Rol> getRoles() {
+        return roles;
+    }
+
 }
