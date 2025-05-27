@@ -22,6 +22,7 @@ public class ProductoController {
     @GetMapping
     public String listarProductos(Model model) {
         model.addAttribute("productos", productoService.listarTodos());
+        model.addAttribute("categorias",categoriaRepository.findAll());
         return "productos/lista";
     }
 

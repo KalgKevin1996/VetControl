@@ -3,8 +3,10 @@ package com.vetcontrol.dto;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class ProductoDTO {
 
@@ -23,8 +25,7 @@ public class ProductoDTO {
     @PositiveOrZero(message = "El stock no puede ser negativo")
     private Integer stock;
 
-    // Campo para la ruta o nombre del archivo de imagen (opcional por ahora)
-    private String imagen;
+    private String imagen; // si decides llenar esto manualmente, opcional
 
     @NotNull(message = "Debe seleccionar una categoría")
     private Long categoriaId;

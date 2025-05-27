@@ -44,7 +44,7 @@ public class ProductoServiceImpl implements ProductoService {
                 .descripcion(dto.getDescripcion())
                 .precio(dto.getPrecio())
                 .stock(dto.getStock())
-                .imagen(dto.getImagen())
+                .imagen(dto.getImagen()) // Por ahora opcional, si lo llenas manualmente
                 .activo(dto.isActivo())
                 .categoria(categoria)
                 .build();
@@ -64,7 +64,7 @@ public class ProductoServiceImpl implements ProductoService {
         existente.setDescripcion(dto.getDescripcion());
         existente.setPrecio(dto.getPrecio());
         existente.setStock(dto.getStock());
-        existente.setImagen(dto.getImagen());
+        existente.setImagen(dto.getImagen()); // se mantiene
         existente.setActivo(dto.isActivo());
         existente.setCategoria(categoria);
 
@@ -86,7 +86,7 @@ public class ProductoServiceImpl implements ProductoService {
                 .descripcion(producto.getDescripcion())
                 .precio(producto.getPrecio())
                 .stock(producto.getStock())
-                .imagen(producto.getImagen())
+                .imagen(producto.getImagen()) // aún puedes mostrarla si existe
                 .activo(producto.isActivo())
                 .categoriaId(producto.getCategoria().getId())
                 .build();
