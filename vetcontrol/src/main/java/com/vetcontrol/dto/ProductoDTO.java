@@ -25,10 +25,12 @@ public class ProductoDTO {
     @PositiveOrZero(message = "El stock no puede ser negativo")
     private Integer stock;
 
-    private String imagen; // si decides llenar esto manualmente, opcional
+    private String imagen;
 
     @NotNull(message = "Debe seleccionar una categoría")
     private Long categoriaId;
+
+    private String categoriaNombre; // ✅ nuevo campo
 
     private boolean activo = true;
 }

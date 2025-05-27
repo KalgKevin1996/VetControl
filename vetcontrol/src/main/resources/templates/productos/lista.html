@@ -19,6 +19,7 @@
       <th>Stock</th>
       <th>Categoría</th>
       <th>Estado</th>
+      <th>Acciones</th>
     </tr>
     </thead>
     <tbody>
@@ -27,9 +28,14 @@
       <td th:text="${producto.nombre}"></td>
       <td th:text="${producto.precio}"></td>
       <td th:text="${producto.stock}"></td>
-      <td th:text="${#lists.find(categorias, c -> c.id == producto.categoriaId)?.nombre} ?: 'Sin categoría'"></td>
+      <td th:text="${producto.categoriaNombre}"></td>
       <td>
         <span th:text="${producto.activo} ? 'Activo' : 'Inactivo'"></span>
+      </td>
+      <td>
+        <a th:href="@{/productos/editar/{id}(id=${producto.id})}" class="btn btn-sm btn-warning">Editar</a>
+        <a th:href="@{/productos/eliminar/{id}(id=${producto.id})}" class="btn btn-sm btn-danger"
+           onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</a>
       </td>
     </tr>
     </tbody>

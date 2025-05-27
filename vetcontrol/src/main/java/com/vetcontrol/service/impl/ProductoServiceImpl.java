@@ -86,9 +86,11 @@ public class ProductoServiceImpl implements ProductoService {
                 .descripcion(producto.getDescripcion())
                 .precio(producto.getPrecio())
                 .stock(producto.getStock())
-                .imagen(producto.getImagen()) // aún puedes mostrarla si existe
+                .imagen(producto.getImagen())
                 .activo(producto.isActivo())
                 .categoriaId(producto.getCategoria().getId())
+                .categoriaNombre(producto.getCategoria().getNombre()) // ✅ aquí lo añadimos
                 .build();
     }
+
 }
