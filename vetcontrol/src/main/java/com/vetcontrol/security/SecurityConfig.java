@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
+    private final CustomSuccessHandler customSuccessHandler;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -28,17 +29,18 @@ public class SecurityConfig {
                 )
                 .formLogin(login -> login
                         .loginPage("/login")
-                        .defaultSuccessUrl("/productos", true)
+                        .successHandler(customSuccessHandler) // << Aquí usamos el handler
                         .permitAll()
                 )
                 .logout(logout -> logout
                         .logoutSuccessUrl("/login?logout")
                         .permitAll()
                 )
-                .authenticationProvider(authenticationProvider()); // <- IMPORTANTE
+                .authenticationProvider(authenticationProvider());
 
         return http.build();
     }
+
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {

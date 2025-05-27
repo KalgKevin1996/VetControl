@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Panel de Administración</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-5">
+  <h1 class="mb-4">Panel de Administración</h1>
+
+  <div class="alert alert-success">
+    Bienvenido al panel de control del administrador.
+  </div>
+
+  <a th:href="@{/productos}" class="btn btn-primary">Gestionar Productos</a>
+  <a th:href="@{/logout}" class="btn btn-secondary">Cerrar sesión</a>
+</div>
+</body>
+</html>
