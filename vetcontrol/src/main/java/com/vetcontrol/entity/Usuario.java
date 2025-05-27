@@ -1,11 +1,7 @@
 package com.vetcontrol.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.*;
 import lombok.*;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "usuarios")
@@ -20,27 +16,15 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    private String nombre;
-
-    @NotBlank
-    private String apellido;
-
-    @Email
-    @NotBlank
-    @Column(unique = true)
+    // Usaremos email como identificador único
+    @Column(nullable = false, unique = true)
     private String email;
 
-    @NotBlank
+    @Column(nullable = false)
     private String password;
 
-    private boolean habilitado = true;
+    @Column(nullable = false)
+    private String rol; // Ej: "ADMIN" o "OPERADOR"
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "usuarios_roles",
-            joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "rol_id")
-    )
-    private Set<Rol> roles = new HashSet<>();
+    private boolean activo;
 }
