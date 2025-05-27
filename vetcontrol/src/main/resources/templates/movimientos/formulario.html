@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Registrar Movimiento</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-5">
+  <h2>Registrar Movimiento de Inventario</h2>
+
+  <div class="alert alert-danger" th:if="${error}" th:text="${error}"></div>
+
+  <form th:action="@{/movimientos/guardar}" th:object="${movimientoDTO}" method="post">
+
+    <div class="mb-3">
+      <label for="productoId" class="form-label">Producto</label>
+      <select class="form-select" th:field="*{productoId}" id="productoId">
+        <option value="" disabled>-- Selecciona un producto --</option>
+        <option th:each="producto : ${productos}"
+                th:value="${producto.id}"
+                th:text="${producto.nombre}">
+        </option>
+      </select>
+      <div class="text-danger" th:if="${#fields.hasErrors('productoId')}" th:errors="*{productoId}"></div>
+    </div>
+
+    <div class="mb-3">
+      <label for="tipoMovimiento" class="form-label">Tipo de Movimiento</label>
+      <select class="form-select" th:field="*{tipoMovimiento}" id="tipoMovimiento">
+        <option value="" disabled>-- Selecciona el tipo --</option>
+        <option th:each="tipo : ${tipos}" th:value="${tipo}" th:text="${tipo}"></option>
+      </select>
+      <div class="text-danger" th:if="${#fields.hasErrors('tipoMovimiento')}" th:errors="*{tipoMovimiento}"></div>
+    </div>
+
+    <div class="mb-3">
+      <label for="cantidad" class="form-label">Cantidad</label>
+      <input type="number" class="form-control" th:field="*{cantidad}" id="cantidad">
+      <div class="text-danger" th:if="${#fields.hasErrors('cantidad')}" th:errors="*{cantidad}"></div>
+    </div>
+
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción (opcional)</label>
+      <textarea class="form-control" th:field="*{descripcion}" id="descripcion"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Registrar</button>
+    <a th:href="@{/movimientos}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+</body>
+</html>

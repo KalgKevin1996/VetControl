@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Historial de Movimientos</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-5">
+  <h2>Historial de Movimientos de Inventario</h2>
+  <a class="btn btn-primary mb-3" th:href="@{/movimientos/nuevo}">+ Registrar Movimiento</a>
+
+  <table class="table table-bordered">
+    <thead class="table-light">
+    <tr>
+      <th>Producto</th>
+      <th>Tipo</th>
+      <th>Cantidad</th>
+      <th>Descripción</th>
+      <th>Fecha</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="mov : ${movimientos}">
+      <td th:text="${mov.productoId}"></td> <!-- Más adelante podemos mostrar nombre si se desea -->
+      <td th:text="${mov.tipoMovimiento}"></td>
+      <td th:text="${mov.cantidad}"></td>
+      <td th:text="${mov.descripcion} ?: '-'"></td>
+      <td>Ver en el servicio, aún no se expone fecha</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
