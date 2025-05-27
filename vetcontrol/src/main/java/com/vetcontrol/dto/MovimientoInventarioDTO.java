@@ -4,6 +4,8 @@ import com.vetcontrol.entity.TipoMovimiento;
 import jakarta.validation.constraints.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -24,4 +26,6 @@ public class MovimientoInventarioDTO {
     private Integer cantidad;
 
     private String descripcion;
+
+    private LocalDateTime fecha; // ✅ nuevo campo
 }

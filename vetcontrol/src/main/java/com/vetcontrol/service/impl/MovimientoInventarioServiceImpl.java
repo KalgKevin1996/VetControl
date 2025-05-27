@@ -72,6 +72,8 @@ public class MovimientoInventarioServiceImpl implements MovimientoInventarioServ
                 .tipoMovimiento(m.getTipoMovimiento())
                 .cantidad(m.getCantidad())
                 .descripcion(m.getDescripcion())
+                .fecha(m.getFecha()) // ✅ aquí se añade
                 .build();
     }
+
 }
