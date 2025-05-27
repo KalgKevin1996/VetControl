@@ -11,13 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.stream.Collectors;
 
 @Service
+@RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
     private final UsuarioRepository usuarioRepository;
-
-    public CustomUserDetailsService(UsuarioRepository usuarioRepository) {
-        this.usuarioRepository = usuarioRepository;
-    }
 
     @Override
     @Transactional
@@ -29,9 +26,9 @@ public class CustomUserDetailsService implements UserDetailsService {
                 usuario.getEmail(),
                 usuario.getPassword(),
                 usuario.isHabilitado(),
-                true,
-                true,
-                true,
+                true, // accountNonExpired
+                true, // credentialsNonExpired
+                true, // accountNonLocked
                 usuario.getRoles().stream()
                         .map(rol -> new SimpleGrantedAuthority(rol.getNombre()))
                         .collect(Collectors.toSet())

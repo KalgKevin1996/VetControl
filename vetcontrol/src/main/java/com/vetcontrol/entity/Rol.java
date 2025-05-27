@@ -5,8 +5,10 @@ import lombok.*;
 
 @Entity
 @Table(name = "roles")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Rol {
 
@@ -15,21 +17,5 @@ public class Rol {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String nombre; //Ej: "ROLE_ADMIN", "ROLE_OPERADOR"
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    private String nombre; // Ej: "ROLE_ADMIN", "ROLE_OPERADOR"
 }

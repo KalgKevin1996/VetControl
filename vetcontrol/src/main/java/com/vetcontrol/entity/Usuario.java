@@ -9,8 +9,10 @@ import java.util.Set;
 
 @Entity
 @Table(name = "usuarios")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Usuario {
 
@@ -35,26 +37,10 @@ public class Usuario {
     private boolean habilitado = true;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usuarios_roles",
+    @JoinTable(
+            name = "usuarios_roles",
             joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "rol_id"))
+            inverseJoinColumns = @JoinColumn(name = "rol_id")
+    )
     private Set<Rol> roles = new HashSet<>();
-
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public boolean isHabilitado() {
-        return habilitado;
-    }
-
-    public Set<Rol> getRoles() {
-        return roles;
-    }
-
 }
