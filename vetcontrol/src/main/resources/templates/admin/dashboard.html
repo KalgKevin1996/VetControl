@@ -1,16 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
-  <meta charset="UTF-8">
   <title>Panel de Administración</title>
-  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
 <body>
-<div th:replace="fragments/navbar :: navbar"></div>
+<div layout:fragment="content">
+  <div class="container mt-5">
+    <h2>Panel de Administración</h2>
+    <p>Bienvenido al panel de administrador. Aquí podrás gestionar usuarios, productos, inventario y más.</p>
 
-<div class="container mt-5">
-  <h1>Bienvenido al Panel de Administración</h1>
-  <p class="lead">Solo accesible para usuarios con rol <strong>ADMIN</strong>.</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card text-bg-primary mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Productos</h5>
+            <p class="card-text">Ver y administrar productos.</p>
+            <a th:href="@{/productos}" class="btn btn-light">Ir</a>
+          </div>
+        </div>
+      </div>
+      <!-- Puedes agregar más tarjetas aquí para usuarios, reportes, etc. -->
+    </div>
+  </div>
 </div>
 </body>
 </html>

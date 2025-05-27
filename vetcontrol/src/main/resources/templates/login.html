@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <head>
     <title>Iniciar Sesión</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
 <body>
-<div th:replace="fragments/navbar :: navbar"></div>
+<div layout:fragment="content">
+    <div class="container mt-5">
+        <h2>VetControl - Login</h2>
 
-<div class="container mt-5">
-    <h2>VetControl - Login</h2>
+        <form th:action="@{/login}" method="post">
+            <div class="mb-3">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" name="username" class="form-control" id="username" required>
+            </div>
 
-    <form th:action="@{/login}" method="post">
-        <div class="mb-3">
-            <label for="username" class="form-label">Usuario</label>
-            <input type="text" name="username" class="form-control" id="username">
-        </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" name="password" class="form-control" id="password" required>
+            </div>
 
-        <div class="mb-3">
-            <label for="password" class="form-label">Contraseña</label>
-            <input type="password" name="password" class="form-control" id="password">
-        </div>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
 
-        <button type="submit" class="btn btn-primary">Ingresar</button>
-
-        <div th:if="${param.error}" class="text-danger mt-3">Usuario o contraseña incorrectos</div>
-        <div th:if="${param.logout}" class="text-success mt-3">Sesión cerrada correctamente</div>
-    </form>
+            <div th:if="${param.error}" class="text-danger mt-3">Usuario o contraseña incorrectos</div>
+            <div th:if="${param.logout}" class="text-success mt-3">Sesión cerrada correctamente</div>
+        </form>
+    </div>
 </div>
 </body>
 </html>

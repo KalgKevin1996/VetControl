@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <title>VetControl</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<!-- Contenido principal -->
+<div class="container mt-4" layout:fragment="content">
+  <!-- Aquí se insertará el contenido específico de cada página -->
+</div>
+
+<!-- Scripts opcionales -->
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
