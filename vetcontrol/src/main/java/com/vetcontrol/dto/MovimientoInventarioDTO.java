@@ -18,6 +18,8 @@ public class MovimientoInventarioDTO {
     @NotNull(message = "Debe seleccionar un producto")
     private Long productoId;
 
+    private String productoNombre; // ✅ nuevo campo
+
     @NotNull(message = "Debe seleccionar el tipo de movimiento")
     private TipoMovimiento tipoMovimiento;
 
@@ -27,5 +29,5 @@ public class MovimientoInventarioDTO {
 
     private String descripcion;
 
-    private LocalDateTime fecha; // ✅ nuevo campo
+    private LocalDateTime fecha;
 }

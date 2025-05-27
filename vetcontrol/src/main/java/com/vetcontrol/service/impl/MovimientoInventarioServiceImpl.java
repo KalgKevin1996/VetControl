@@ -69,10 +69,11 @@ public class MovimientoInventarioServiceImpl implements MovimientoInventarioServ
         return MovimientoInventarioDTO.builder()
                 .id(m.getId())
                 .productoId(m.getProducto().getId())
+                .productoNombre(m.getProducto().getNombre()) // ✅ aquí
                 .tipoMovimiento(m.getTipoMovimiento())
                 .cantidad(m.getCantidad())
                 .descripcion(m.getDescripcion())
-                .fecha(m.getFecha()) // ✅ aquí se añade
+                .fecha(m.getFecha())
                 .build();
     }
 

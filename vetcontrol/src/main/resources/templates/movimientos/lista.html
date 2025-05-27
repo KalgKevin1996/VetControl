@@ -22,7 +22,7 @@
     </thead>
     <tbody>
     <tr th:each="mov : ${movimientos}">
-      <td th:text="${mov.productoId}"></td>
+      <td th:text="${mov.productoNombre}"></td>
       <td th:text="${mov.tipoMovimiento}"></td>
       <td th:text="${mov.cantidad}"></td>
       <td th:text="${mov.descripcion} ?: '-'"></td>
