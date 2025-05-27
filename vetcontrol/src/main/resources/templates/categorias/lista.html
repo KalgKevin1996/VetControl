@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Categorías - VetControl</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-5">
+  <h2 class="mb-4">Categorías</h2>
+  <a class="btn btn-primary mb-3" th:href="@{/categorias/nueva}">+ Nueva Categoría</a>
+  <table class="table table-bordered">
+    <thead class="table-light">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="categoria : ${categorias}">
+      <td th:text="${categoria.id}">1</td>
+      <td th:text="${categoria.nombre}">Vacunas</td>
+      <td th:text="${categoria.descripcion}">Vacunas para perros</td>
+      <td>
+        <a th:href="@{'/categorias/editar/' + ${categoria.id}}" class="btn btn-sm btn-warning">Editar</a>
+        <a th:href="@{'/categorias/eliminar/' + ${categoria.id}}"
+           class="btn btn-sm btn-danger"
+           onclick="return confirm('¿Deseas eliminar esta categoría?');">Eliminar</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
