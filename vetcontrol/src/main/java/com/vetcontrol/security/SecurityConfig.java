@@ -25,20 +25,22 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/login", "/css/**", "/js/**").permitAll()
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/operador/**").hasRole("OPERADOR")
                         .anyRequest().authenticated()
                 )
                 .formLogin(login -> login
                         .loginPage("/login")
-                        .successHandler(successHandler) // << Aquí usamos el handler
+                        .defaultSuccessUrl("/productos", true)
                         .permitAll()
                 )
                 .logout(logout -> logout
                         .logoutSuccessUrl("/login?logout")
                         .permitAll()
                 )
+                .exceptionHandling(ex -> ex
+                        .accessDeniedPage("/error/403") // <-- Esta línea maneja los errores 403
+                )
                 .authenticationProvider(authenticationProvider());
+
 
         return http.build();
     }

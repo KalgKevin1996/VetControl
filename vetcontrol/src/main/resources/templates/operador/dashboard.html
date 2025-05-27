@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Operador Dashboard</title>
+  <title>Dashboard Operador</title>
+  <meta charset="UTF-8">
   <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
 <body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
 <div class="container mt-5">
-  <h2>Bienvenido al Panel de Operador</h2>
-  <p>Aquí puedes registrar movimientos de inventario y ver productos.</p>
+  <h2>Bienvenido Operador</h2>
+  <p>Este es tu panel de trabajo.</p>
+  <a class="btn btn-secondary" th:href="@{/productos}">Ir a Productos</a>
 </div>
 </body>
 </html>

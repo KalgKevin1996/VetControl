@@ -6,6 +6,8 @@
   <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
 <body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
 <div class="container mt-5">
   <h2 th:text="${categoriaDTO.id == null} ? 'Nueva Categoría' : 'Editar Categoría'"></h2>
 

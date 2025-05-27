@@ -6,6 +6,8 @@
   <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
 <body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
 <div class="container mt-5">
   <h2>Productos</h2>
   <a class="btn btn-primary mb-3" th:href="@{/productos/nuevo}">+ Nuevo Producto</a>

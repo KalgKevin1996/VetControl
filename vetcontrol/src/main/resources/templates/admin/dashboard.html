@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Admin Dashboard</title>
+  <meta charset="UTF-8">
+  <title>Panel de Administración</title>
   <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
 <body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
 <div class="container mt-5">
-  <h2>Bienvenido al Panel de Administrador</h2>
-  <p>Desde aquí puedes gestionar usuarios, productos, reportes, etc.</p>
+  <h1>Bienvenido al Panel de Administración</h1>
+  <p class="lead">Solo accesible para usuarios con rol <strong>ADMIN</strong>.</p>
 </div>
 </body>
 </html>
