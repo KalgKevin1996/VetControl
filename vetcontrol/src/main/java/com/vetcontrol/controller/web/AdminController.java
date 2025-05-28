@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/admin")
 public class AdminController {
 
+    @GetMapping
+    public String redirectToDashboard() {
+        return "redirect:/admin/dashboard";
+    }
+
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/dashboard")
     public String mostrarDashboardAdmin() {

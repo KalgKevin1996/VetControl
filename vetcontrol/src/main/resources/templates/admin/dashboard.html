@@ -1,21 +1,68 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
 <section>
-  <div class="container mt-5">
-    <h2>Panel de Administración</h2>
-    <p>Bienvenido al panel de administrador. Aquí podrás gestionar usuarios, productos, inventario y más.</p>
+  <div class="container mt-4">
+    <div class="text-center mb-5">
+      <img th:src="@{/img/pokemon/picachu.svg}" alt="Pikachu" width="80">
+      <h2 class="mt-3">Panel de Administración</h2>
+      <p class="lead">¡Bienvenido a VetControl! Gestiona tu tienda con ayuda de los Pokémon.</p>
+    </div>
 
-    <div class="row">
+    <div class="row g-4">
       <div class="col-md-4">
-        <div class="card text-bg-primary mb-3">
+        <div class="card border-primary shadow h-100 text-center">
           <div class="card-body">
-            <h5 class="card-title">Productos</h5>
-            <p class="card-text">Ver y administrar productos.</p>
-            <a th:href="@{/productos}" class="btn btn-light">Ir</a>
+            <img th:src="@{/img/pokemon/potion.svg}" alt="Productos" width="64" class="mb-2">
+            <h5 class="card-title mt-2">Productos</h5>
+            <p class="card-text">Administra el catálogo de productos veterinarios.</p>
+            <a th:href="@{/productos}" class="btn btn-outline-primary btn-sm">Ir a productos</a>
           </div>
         </div>
       </div>
-      <!-- Puedes agregar más tarjetas aquí para usuarios, reportes, etc. -->
+
+      <div class="col-md-4">
+        <div class="card border-success shadow h-100 text-center">
+          <div class="card-body">
+            <img th:src="@{/img/pokemon/pokeball.svg}" alt="Categorías" width="64" class="mb-2">
+            <h5 class="card-title mt-2">Categorías</h5>
+            <p class="card-text">Gestiona las categorías de productos.</p>
+            <a th:href="@{/categorias}" class="btn btn-outline-success btn-sm">Ir a categorías</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-warning shadow h-100 text-center">
+          <div class="card-body">
+            <i class="bi bi-arrow-left-right display-4 text-warning mb-2"></i>
+            <h5 class="card-title mt-2">Movimientos</h5>
+            <p class="card-text">Registra entradas y salidas de inventario.</p>
+            <a th:href="@{/movimientos}" class="btn btn-outline-warning btn-sm">Ir a movimientos</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-danger shadow h-100 text-center">
+          <div class="card-body">
+            <i class="bi bi-people display-4 text-danger mb-2"></i>
+            <h5 class="card-title mt-2">Usuarios</h5>
+            <p class="card-text">Administra usuarios del sistema.</p>
+            <a th:href="@{/usuarios}" class="btn btn-outline-danger btn-sm">Ir a usuarios</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card border-info shadow h-100 text-center">
+          <div class="card-body">
+            <i class="bi bi-bar-chart-line display-4 text-info mb-2"></i>
+            <h5 class="card-title mt-2">Reportes</h5>
+            <p class="card-text">Visualiza estadísticas e informes.</p>
+            <a th:href="@{/reportes}" class="btn btn-outline-info btn-sm">Ir a reportes</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
