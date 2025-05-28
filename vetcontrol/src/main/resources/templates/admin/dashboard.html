@@ -3,66 +3,72 @@
 <section>
   <div class="container mt-4">
     <div class="text-center mb-5">
-      <img th:src="@{/img/pokemon/picachu.svg}" alt="Pikachu" width="80">
-      <h2 class="mt-3">Panel de Administración</h2>
-      <p class="lead">¡Bienvenido a VetControl! Gestiona tu tienda con ayuda de los Pokémon.</p>
+      <h2>🎮 Panel de Administración Pokémon</h2>
+      <p class="lead">¡Bienvenido a VetControl con estilo Pokémon! Elige una opción para comenzar.</p>
     </div>
 
     <div class="row g-4">
+
+      <!-- Productos -->
       <div class="col-md-4">
-        <div class="card border-primary shadow h-100 text-center">
-          <div class="card-body">
-            <img th:src="@{/img/pokemon/potion.svg}" alt="Productos" width="64" class="mb-2">
-            <h5 class="card-title mt-2">Productos</h5>
-            <p class="card-text">Administra el catálogo de productos veterinarios.</p>
-            <a th:href="@{/productos}" class="btn btn-outline-primary btn-sm">Ir a productos</a>
+        <div class="card h-100 shadow border-0">
+          <div class="card-body text-center">
+            <img th:src="@{/img/pokemon/productos/pokebola.svg}" alt="Productos" width="64" height="64">
+            <h5 class="card-title mt-3">Productos</h5>
+            <p class="card-text">Administra productos veterinarios.</p>
+            <a th:href="@{/productos}" class="btn btn-outline-primary btn-sm">Ver productos</a>
           </div>
         </div>
       </div>
 
+      <!-- Categorías -->
       <div class="col-md-4">
-        <div class="card border-success shadow h-100 text-center">
-          <div class="card-body">
-            <img th:src="@{/img/pokemon/pokeball.svg}" alt="Categorías" width="64" class="mb-2">
-            <h5 class="card-title mt-2">Categorías</h5>
-            <p class="card-text">Gestiona las categorías de productos.</p>
-            <a th:href="@{/categorias}" class="btn btn-outline-success btn-sm">Ir a categorías</a>
+        <div class="card h-100 shadow border-0">
+          <div class="card-body text-center">
+            <img th:src="@{/img/pokemon/categorias/insignia.svg}" alt="Categorías" width="64" height="64">
+            <h5 class="card-title mt-3">Categorías</h5>
+            <p class="card-text">Gestiona categorías de productos.</p>
+            <a th:href="@{/categorias}" class="btn btn-outline-success btn-sm">Ver categorías</a>
           </div>
         </div>
       </div>
 
+      <!-- Movimientos -->
       <div class="col-md-4">
-        <div class="card border-warning shadow h-100 text-center">
-          <div class="card-body">
-            <i class="bi bi-arrow-left-right display-4 text-warning mb-2"></i>
-            <h5 class="card-title mt-2">Movimientos</h5>
+        <div class="card h-100 shadow border-0">
+          <div class="card-body text-center">
+            <img th:src="@{/img/pokemon/movimientos/flechas.svg}" alt="Movimientos" width="64" height="64">
+            <h5 class="card-title mt-3">Movimientos</h5>
             <p class="card-text">Registra entradas y salidas de inventario.</p>
-            <a th:href="@{/movimientos}" class="btn btn-outline-warning btn-sm">Ir a movimientos</a>
+            <a th:href="@{/movimientos}" class="btn btn-outline-warning btn-sm">Ver movimientos</a>
           </div>
         </div>
       </div>
 
+      <!-- Usuarios -->
       <div class="col-md-4">
-        <div class="card border-danger shadow h-100 text-center">
-          <div class="card-body">
-            <i class="bi bi-people display-4 text-danger mb-2"></i>
-            <h5 class="card-title mt-2">Usuarios</h5>
-            <p class="card-text">Administra usuarios del sistema.</p>
-            <a th:href="@{/usuarios}" class="btn btn-outline-danger btn-sm">Ir a usuarios</a>
+        <div class="card h-100 shadow border-0">
+          <div class="card-body text-center">
+            <img th:src="@{/img/pokemon/usuarios/entrenador.svg}" alt="Usuarios" width="64" height="64">
+            <h5 class="card-title mt-3">Usuarios</h5>
+            <p class="card-text">Administra los usuarios del sistema.</p>
+            <a th:href="@{/usuarios}" class="btn btn-outline-danger btn-sm">Ver usuarios</a>
           </div>
         </div>
       </div>
 
+      <!-- Reportes -->
       <div class="col-md-4">
-        <div class="card border-info shadow h-100 text-center">
-          <div class="card-body">
-            <i class="bi bi-bar-chart-line display-4 text-info mb-2"></i>
-            <h5 class="card-title mt-2">Reportes</h5>
+        <div class="card h-100 shadow border-0">
+          <div class="card-body text-center">
+            <img th:src="@{/img/pokemon/reportes/grafico_barras.svg}" alt="Reportes" width="64" height="64">
+            <h5 class="card-title mt-3">Reportes</h5>
             <p class="card-text">Visualiza estadísticas e informes.</p>
-            <a th:href="@{/reportes}" class="btn btn-outline-info btn-sm">Ir a reportes</a>
+            <a th:href="@{/reportes}" class="btn btn-outline-info btn-sm">Ver reportes</a>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
