@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<section>
+    <h1>Listado de Productos</h1>
+
+    <a class="btn btn-primary mb-3" th:href="@{/productos/nuevo}">+ Nuevo Producto</a>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="producto : ${productos}">
+            <td th:text="${producto.id}">1</td>
+            <td th:text="${producto.nombre}">Nombre</td>
+            <td>
+                <span th:if="${categorias != null}">
+                    <span th:each="categoria : ${categorias}"
+                          th:if="${categoria.id == producto.categoriaId}"
+                          th:text="${categoria.nombre}">Categoría</span>
+                </span>
+                <span th:if="${#lists.isEmpty(categorias)}">Sin categoría</span>
+            </td>
+            <td th:text="${producto.precio}">0.00</td>
+            <td th:text="${producto.stock}">0</td>
+            <td>
+                <a th:href="@{'/productos/editar/' + ${producto.id}}" class="btn btn-sm btn-warning">Editar</a>
+                <a th:href="@{'/productos/eliminar/' + ${producto.id}}" class="btn btn-sm btn-danger"
+                   onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</html>

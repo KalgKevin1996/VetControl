@@ -1,12 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout}">
-<head>
-  <title>Panel de Administración</title>
-</head>
-<body>
-<div layout:fragment="content">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<section>
   <div class="container mt-5">
     <h2>Panel de Administración</h2>
     <p>Bienvenido al panel de administrador. Aquí podrás gestionar usuarios, productos, inventario y más.</p>
@@ -24,6 +18,5 @@
       <!-- Puedes agregar más tarjetas aquí para usuarios, reportes, etc. -->
     </div>
   </div>
-</div>
-</body>
+</section>
 </html>

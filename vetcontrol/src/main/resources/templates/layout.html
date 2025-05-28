@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" lang="es" th:fragment="layout(contenido)">
 <head>
   <meta charset="UTF-8">
   <title>VetControl</title>
@@ -12,11 +11,9 @@
 <div th:replace="fragments/navbar :: navbar"></div>
 
 <!-- Contenido principal -->
-<div class="container mt-4" layout:fragment="content">
-  <!-- Aquí se insertará el contenido específico de cada página -->
+<div class="container mt-4">
+  <main th:insert="${contenido}"></main>
 </div>
 
-<!-- Scripts opcionales -->
-<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

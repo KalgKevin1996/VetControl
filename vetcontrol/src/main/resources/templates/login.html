@@ -1,32 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout}">
-<head>
-    <title>Iniciar Sesión</title>
-</head>
-<body>
-<div layout:fragment="content">
-    <div class="container mt-5">
-        <h2>VetControl - Login</h2>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<section>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4 text-center">Iniciar Sesión</h2>
 
-        <form th:action="@{/login}" method="post">
-            <div class="mb-3">
-                <label for="username" class="form-label">Usuario</label>
-                <input type="text" name="username" class="form-control" id="username" required>
+            <form th:action="@{/login}" method="post">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Correo electrónico</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="email@dominio.com">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+            </form>
+
+            <div th:if="${param.error}" class="alert alert-danger mt-3">
+                Credenciales incorrectas. Intenta nuevamente.
             </div>
-
-            <div class="mb-3">
-                <label for="password" class="form-label">Contraseña</label>
-                <input type="password" name="password" class="form-control" id="password" required>
+            <div th:if="${param.logout}" class="alert alert-success mt-3">
+                Has cerrado sesión exitosamente.
             </div>
-
-            <button type="submit" class="btn btn-primary">Ingresar</button>
-
-            <div th:if="${param.error}" class="text-danger mt-3">Usuario o contraseña incorrectos</div>
-            <div th:if="${param.logout}" class="text-success mt-3">Sesión cerrada correctamente</div>
-        </form>
+        </div>
     </div>
-</div>
-</body>
+</section>
 </html>
