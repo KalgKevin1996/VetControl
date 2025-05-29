@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+
+<section>
+    <div class="container">
+        <h1 class="mb-4 text-center">Resumen General</h1>
+
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-4">
+                <div class="card text-white bg-primary mb-3 text-center shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Total de Movimientos</h5>
+                        <p class="display-5 fw-bold" th:text="${totalMovimientos}">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Movimientos por tipo</h5>
+                        <canvas id="graficoMovimientos"
+                                th:attr="data-labels=${labels}, data-values=${values}"
+                                width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script th:src="@{/js/grafico_barras.js}"></script>
+</section>
+</html>
