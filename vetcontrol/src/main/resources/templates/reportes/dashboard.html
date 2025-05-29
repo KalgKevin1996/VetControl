@@ -1,57 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
-<section>
-    <div class="container">
-        <h2 class="mb-4 text-center">Panel de Reportes</h2>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('Dashboard - Reportes')"></head>
+<body>
 
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <canvas id="graficoMovimientos" height="200"></canvas>
-            </div>
-        </div>
-    </div>
+<div class="container py-5">
+    <h2 class="mb-5 text-center">Panel de Reportes</h2>
 
-    <div class="col-md-4">
-        <div class="card shadow border-0 text-center">
-            <div class="card-body">
-                <h5 class="card-title">Productos Registrados</h5>
-                <p class="display-6 fw-bold text-primary" th:text="${totalProductos}">0</p>
-            </div>
-        </div>
-    </div>
+    <!-- Tarjetas resumen -->
+    <div th:replace="fragments/resumen :: resumen(${totalProductos}, ${activos}, ${inactivos})"></div>
 
+    <!-- Gráficos -->
+    <div th:replace="fragments/graficos :: graficos(${labels}, ${values}, ${topIngresosNombres}, ${topIngresosValores}, ${topSalidasNombres}, ${topSalidasValores})"></div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script th:inline="javascript">
-    /*<![CDATA[*/
-    const labels = [[${labels}]];
-    const values = [[${values}]];
-
-    const ctx = document.getElementById('graficoMovimientos');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Movimientos por tipo',
-          data: values,
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'top',
-          },
-          title: {
-            display: true,
-            text: 'Gráfico de Movimientos de Inventario'
-          }
-        }
-      }
-    });
-    /*]]>*/
-  </script>
-</section>
+</body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="row text-center mb-5 g-4" th:fragment="resumen(total, activos, inactivos)">
+  <div class="col-md-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <h4 class="card-title text-secondary">Productos Registrados</h4>
+        <p class="display-6 fw-bold text-primary" th:text="${total}">0</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <h4 class="card-title text-secondary">Productos Activos</h4>
+        <p class="display-6 fw-bold text-success" th:text="${activos}">0</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <h4 class="card-title text-secondary">Productos Inactivos</h4>
+        <p class="display-6 fw-bold text-danger" th:text="${inactivos}">0</p>
+      </div>
+    </div>
+  </div>
+</div>
+</html>

@@ -5,7 +5,6 @@ import com.vetcontrol.repository.MovimientoInventarioRepository;
 import com.vetcontrol.repository.ProductoRepository;
 import com.vetcontrol.service.ReporteService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -16,8 +15,7 @@ import java.util.List;
 public class ReporteServiceImpl implements ReporteService {
 
     private final MovimientoInventarioRepository movimientoRepo;
-    @Autowired
-    private ProductoRepository productoRepository;
+    private final ProductoRepository productoRepository;
 
     @Override
     public long contarMovimientos() {
@@ -37,8 +35,29 @@ public class ReporteServiceImpl implements ReporteService {
                 .map(tipo -> movimientoRepo.countByTipoMovimiento(tipo))
                 .toList();
     }
+
     @Override
     public long contarProductos() {
         return productoRepository.count();
+    }
+
+    @Override
+    public long contarProductosActivos() {
+        return productoRepository.countByActivoTrue();
+    }
+
+    @Override
+    public long contarProductosInactivos() {
+        return productoRepository.countByActivoFalse();
+    }
+
+    @Override
+    public List<Object[]> topProductosIngresos() {
+        return movimientoRepo.top5ProductosPorTipoMovimiento(TipoMovimiento.ENTRADA);
+    }
+
+    @Override
+    public List<Object[]> topProductosSalidas() {
+        return movimientoRepo.top5ProductosPorTipoMovimiento(TipoMovimiento.SALIDA);
     }
 }
