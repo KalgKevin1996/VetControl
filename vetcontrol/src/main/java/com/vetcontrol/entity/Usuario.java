@@ -16,6 +16,12 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
+    private String nombre;
+
+    @Column(nullable = false)
+    private String apellido;
+
     // Usaremos email como identificador único
     @Column(nullable = false, unique = true)
     private String email;
@@ -26,5 +32,6 @@ public class Usuario {
     @Column(nullable = false)
     private String rol; // Ej: "ADMIN" o "OPERADOR"
 
+    @Column(nullable = false)
     private boolean activo;
 }
