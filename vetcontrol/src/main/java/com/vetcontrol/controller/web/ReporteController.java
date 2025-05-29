@@ -23,6 +23,8 @@ public class ReporteController {
         ObjectMapper mapper = new ObjectMapper();
         model.addAttribute("labels", mapper.writeValueAsString(reporteService.obtenerLabelsTiposMovimiento()));
         model.addAttribute("values", mapper.writeValueAsString(reporteService.obtenerValoresTiposMovimiento()));
+        model.addAttribute("totalProductos", reporteService.contarProductos());
+
 
         return "reportes/dashboard";
     }
