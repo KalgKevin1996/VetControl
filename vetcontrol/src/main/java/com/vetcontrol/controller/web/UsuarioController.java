@@ -2,9 +2,11 @@ package com.vetcontrol.controller.web;
 
 import com.vetcontrol.dto.UsuarioDTO;
 import com.vetcontrol.service.UsuarioService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -27,15 +29,22 @@ public class UsuarioController {
     }
 
     @PostMapping("/guardar")
-    public String guardarUsuario(@ModelAttribute("usuario") UsuarioDTO usuarioDTO, Model model) {
+    public String guardarUsuario(@Valid @ModelAttribute("usuario") UsuarioDTO usuarioDTO,
+                                 BindingResult result,
+                                 Model model) {
+        // Validar que las contraseñas coincidan
         if (!usuarioDTO.getPassword().equals(usuarioDTO.getConfirmPassword())) {
-            model.addAttribute("error", "Las contraseñas no coinciden");
-            return "usuarios/formulario";
+            result.rejectValue("confirmPassword", null, "Las contraseñas no coinciden");
+        }
+
+        if (result.hasErrors()) {
+            return "usuarios/formulario"; // vuelve al formulario si hay errores
         }
 
         usuarioService.guardar(usuarioDTO);
         return "redirect:/usuarios";
     }
+
 
 
     @GetMapping("/editar/{id}")
