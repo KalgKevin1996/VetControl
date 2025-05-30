@@ -4,7 +4,7 @@
 <div th:fragment="navbar">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" th:href="@{/productos}">
+      <a class="navbar-brand d-flex align-items-center" th:href="@{/inicio}">
         <img th:src="@{/img/pokemon/productos/pokebola.svg}" width="30" height="30" class="me-2">
         VetControl
       </a>
@@ -23,7 +23,16 @@
             </a>
           </li>
         </ul>
+
+        <!-- Info de usuario -->
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item me-3 text-white d-flex align-items-center" th:if="${usuarioActual != null}">
+            <span class="me-2">
+              👤 <strong th:text="${usuarioActual.name}">usuario</strong>
+            </span>
+            <span class="badge bg-secondary" th:text="${usuarioRol}">ROL</span>
+
+          </li>
           <li class="nav-item">
             <form th:action="@{/logout}" method="post">
               <button type="submit" class="btn btn-outline-light btn-sm">Cerrar sesión</button>
@@ -34,5 +43,6 @@
     </div>
   </nav>
 </div>
+
 </body>
 </html>

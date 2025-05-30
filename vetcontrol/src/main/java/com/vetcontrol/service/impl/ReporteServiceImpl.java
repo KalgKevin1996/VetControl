@@ -13,6 +13,8 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ReporteServiceImpl implements ReporteService {
+    private final MovimientoInventarioRepository movimientoInventarioRepository;
+
 
     private final MovimientoInventarioRepository movimientoRepo;
     private final ProductoRepository productoRepository;
@@ -60,4 +62,11 @@ public class ReporteServiceImpl implements ReporteService {
     public List<Object[]> topProductosSalidas() {
         return movimientoRepo.top5ProductosPorTipoMovimiento(TipoMovimiento.SALIDA);
     }
+
+    @Override
+    public List<Object[]> obtenerDatosPorTipoMovimiento(TipoMovimiento tipoMovimiento) {
+        return movimientoRepo.top5ProductosPorTipoMovimiento(tipoMovimiento);
+
+    }
+
 }

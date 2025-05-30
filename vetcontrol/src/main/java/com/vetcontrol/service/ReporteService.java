@@ -1,5 +1,7 @@
 package com.vetcontrol.service;
 
+import com.vetcontrol.entity.TipoMovimiento;
+
 import java.util.List;
 
 public interface ReporteService {
@@ -15,4 +17,8 @@ public interface ReporteService {
     long contarMovimientos();
     List<String> obtenerLabelsTiposMovimiento();
     List<Long> obtenerValoresTiposMovimiento();
+
+    List<Object[]> obtenerDatosPorTipoMovimiento(TipoMovimiento tipoMovimiento);
+
+
 }

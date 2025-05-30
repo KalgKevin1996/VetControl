@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="fragments/head :: head('Dashboard - Reportes')"></head>
 <body>
-
+<div th:replace="~{fragments/navbar :: navbar}"></div>
 <div class="container py-5">
     <h2 class="mb-5 text-center">Panel de Reportes</h2>
+
+    <div class="text-end mb-4">
+        <a th:href="@{/reportes/exportar/pdf}" class="btn btn-outline-danger">
+            <i class="bi bi-file-earmark-pdf-fill"></i> Exportar PDF
+        </a>
+        <a th:href="@{/reportes/exportar-excel/entrada}" class="btn btn-outline-success me-2">
+            <i class="bi bi-file-earmark-excel-fill"></i> Excel Ingresos
+        </a>
+        <a th:href="@{/reportes/exportar-excel/salida}" class="btn btn-outline-primary">
+            <i class="bi bi-file-earmark-excel-fill"></i> Excel Salidas
+        </a>
+    </div>
+
+
 
     <!-- Tarjetas resumen -->
     <div th:replace="fragments/resumen :: resumen(${totalProductos}, ${activos}, ${inactivos})"></div>
