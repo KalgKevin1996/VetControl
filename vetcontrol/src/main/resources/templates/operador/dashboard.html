@@ -4,14 +4,57 @@
   <title>Dashboard Operador</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/bootstrap-icons.css}">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .dashboard-card {
+      background-color: white;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease;
+    }
+
+    h2 {
+      font-weight: 700;
+    }
+
+    .btn-dashboard {
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-dashboard:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+
+<!-- Navbar -->
 <div th:replace="fragments/navbar :: navbar"></div>
 
+<!-- Contenido principal -->
 <div class="container mt-5">
-  <h2>Bienvenido Operador</h2>
-  <p>Este es tu panel de trabajo.</p>
-  <a class="btn btn-secondary" th:href="@{/productos}">Ir a Productos</a>
+  <div class="dashboard-card text-center">
+    <h2 class="mb-3">👷 Bienvenido, Operador</h2>
+    <p class="lead text-muted mb-4">Este es tu panel de trabajo. Aquí puedes administrar los productos y mantener el control del inventario.</p>
+    <a class="btn btn-outline-primary btn-dashboard" th:href="@{/productos}">
+      <i class="bi bi-box-seam"></i> Gestionar Productos
+    </a>
+  </div>
 </div>
+
 </body>
 </html>
