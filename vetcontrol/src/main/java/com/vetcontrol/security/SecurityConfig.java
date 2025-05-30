@@ -24,11 +24,13 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/inicio", "/css/**", "/js/**", "/img/**", "/login", "/error").permitAll()
-
-
+                        .requestMatchers(
+                                "/", "/inicio", "/css/**", "/js/**", "/img/**", "/login", "/error",
+                                "/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/api-docs"
+                        ).permitAll()
                         .anyRequest().authenticated()
                 )
+
                 .formLogin(login -> login
                         .loginPage("/login")
                         .successHandler(successHandler)
