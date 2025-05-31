@@ -50,16 +50,16 @@ vetcontrol/
 ## 🖼️ Capturas de pantalla
 
 ### Login
-![Login](screenshots/login.png)
+![Login](vetcontrol/screenshots/login.png)
 
 ### Panel de Inicio
-![Inicio](screenshots/inicio.png)
+![Inicio](vetcontrol/screenshots/inicio.png)
 
 ### Dashboard Administrativo
-![Dashboard Admin](screenshots/admin_dashboard.png)
+![Dashboard Admin](vetcontrol/screenshots/admin_dashboard.png)
 
 ### Gestión de Usuarios
-![Usuarios](screenshots/usuarios.png)
+![Usuarios](vetcontrol/screenshots/usuarios.png)
 ![Formulario Usuarios](screenshots/usuarios_form.png)
 
 ### Gestión de Productos y Categorías
