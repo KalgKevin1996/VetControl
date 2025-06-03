@@ -93,7 +93,7 @@ vetcontrol/
    ```
 
 3. Acceder desde el navegador:
-    - App: [http://localhost:8081/login](http://localhost:8081/login)
+    - App: [http://localhost:8081/login](http://localhost:80/login)
     - Swagger: [http://localhost:8081/swagger-ui.html](http://localhost:8081/swagger-ui.html)
 
 ## 👥 Usuarios iniciales
