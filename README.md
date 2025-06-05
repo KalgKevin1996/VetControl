@@ -50,34 +50,34 @@ vetcontrol/
 ## 🖼️ Capturas de pantalla
 
 ### Login
-![Login](vetcontrol/screenshots/login.png)
+![Login](screenshots/login.png)
 
 ### Panel de Inicio
-![Inicio](vetcontrol/screenshots/inicio.png)
+![Inicio](screenshots/inicio.png)
 
 ### Dashboard Administrativo
-![Dashboard Admin](vetcontrol/screenshots/admin_dashboard.png)
+![Dashboard Admin](screenshots/admin_dashboard.png)
 
 ### Gestión de Usuarios
-![Usuarios](vetcontrol/screenshots/usuarios.png)
-![Formulario Usuarios](vetcontrol/screenshots/usuarios_form.png)
+![Usuarios](screenshots/usuarios.png)
+![Formulario Usuarios](screenshots/usuarios_form.png)
 
 ### Gestión de Productos y Categorías
-![Productos](vetcontrol/screenshots/productos.png)
-![Formulario Producto](vetcontrol/screenshots/productos_form.png)
-![Categorías](vetcontrol/screenshots/categorias.png)
-![Formulario Categoría](vetcontrol/screenshots/categorias_form.png)
+![Productos](screenshots/productos.png)
+![Formulario Producto](screenshots/productos_form.png)
+![Categorías](screenshots/categorias.png)
+![Formulario Categoría](screenshots/categorias_form.png)
 
 ### Movimientos de Inventario
-![Movimientos](vetcontrol/screenshots/movimientos.png)
-![Formulario Movimiento](vetcontrol/screenshots/movimientos_form.png)
+![Movimientos](screenshots/movimientos.png)
+![Formulario Movimiento](screenshots/movimientos_form.png)
 
 ### Reportes
-![Reportes](vetcontrol/screenshots/reportes.png)
-![Exportar Reporte](vetcontrol/screenshots/reportes_exportacion.png)
+![Reportes](screenshots/reportes.png)
+![Exportar Reporte](screenshots/reportes_exportacion.png)
 
 ### Swagger UI - Documentación API
-![Swagger](vetcontrol/screenshots/Swagger UI.png)
+![Swagger](screenshots/Swagger UI.png)
 
 ## 🐳 Instrucciones para levantar el proyecto con Docker
 
@@ -93,7 +93,7 @@ vetcontrol/
    ```
 
 3. Acceder desde el navegador:
-    - App: [http://localhost:8081/login](http://localhost:8081/login)
+    - App: [http://localhost:8081/login](http://localhost:80/login)
     - Swagger: [http://localhost:8081/swagger-ui.html](http://localhost:8081/swagger-ui.html)
 
 ## 👥 Usuarios iniciales

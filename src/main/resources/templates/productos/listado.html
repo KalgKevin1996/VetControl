@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<section>
+    <div class="container mt-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-primary">
+                <img th:src="@{/img/pokemon/productos/pocion.svg}" alt="Icono" width="40" class="me-2">
+                Listado de Productos
+            </h2>
+            <a th:href="@{/productos/nuevo}" class="btn btn-outline-success btn-sm">
+                <i class="bi bi-plus-circle"></i> Nuevo Producto
+            </a>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-hover align-middle shadow-sm">
+                <thead class="table-dark text-center">
+                <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Categoría</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="producto : ${productos}">
+                    <td th:text="${producto.id}" class="text-center">1</td>
+                    <td th:text="${producto.nombre}" class="fw-bold">Nombre</td>
+                    <td class="text-center">
+              <span th:if="${categorias != null}">
+                <span th:each="categoria : ${categorias}"
+                      th:if="${categoria.id == producto.categoriaId}"
+                      class="badge bg-secondary"
+                      th:text="${categoria.nombre}">Categoría</span>
+              </span>
+                        <span th:if="${#lists.isEmpty(categorias)}" class="text-muted">Sin categoría</span>
+                    </td>
+                    <td class="text-end" th:text="${#numbers.formatDecimal(producto.precio, 1, 'POINT', 2, 'COMMA')}">Q0.00</td>
+                    <td class="text-center">
+                        <span class="badge bg-warning text-dark" th:text="${producto.stock}">0</span>
+                    </td>
+                    <td class="text-center">
+                        <a th:href="@{'/productos/editar/' + ${producto.id}}" class="btn btn-outline-warning btn-sm me-1">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <a th:href="@{'/productos/eliminar/' + ${producto.id}}"
+                           class="btn btn-outline-danger btn-sm"
+                           onclick="return confirm('¿Estás seguro de eliminar este producto?')">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+</html>

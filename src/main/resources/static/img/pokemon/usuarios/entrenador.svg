@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+    <!-- Fondo -->
+    <rect width="64" height="64" rx="12" fill="#fff3e0"/>
+
+    <!-- Gorra roja -->
+    <path d="M20 26 Q32 10 44 26 Q32 22 20 26 Z" fill="#ef5350" stroke="#c62828" stroke-width="1.5"/>
+    <circle cx="32" cy="22" r="3" fill="white" stroke="#c62828" stroke-width="1"/>
+
+    <!-- Cara -->
+    <circle cx="32" cy="38" r="9" fill="#ffe0b2" stroke="#6d4c41" stroke-width="1.5"/>
+
+    <!-- Ojos -->
+    <circle cx="29" cy="36" r="1.5" fill="#3e2723"/>
+    <circle cx="35" cy="36" r="1.5" fill="#3e2723"/>
+
+    <!-- Sonrisa -->
+    <path d="M29 42 Q32 44 35 42" stroke="#6d4c41" stroke-width="1.2" fill="none"/>
+
+    <!-- Camiseta -->
+    <path d="M22 52 Q32 46 42 52 Q42 58 22 58 Q22 52 22 52 Z" fill="#42a5f5" stroke="#1565c0" stroke-width="1.5"/>
+
+    <!-- Pokébola decorativa en el centro de la camiseta -->
+    <circle cx="32" cy="52" r="3" fill="white" stroke="#d32f2f" stroke-width="1.2"/>
+    <line x1="29.5" y1="52" x2="34.5" y2="52" stroke="#d32f2f" stroke-width="0.8"/>
+    <circle cx="32" cy="52" r="1" fill="#d32f2f"/>
+
+    <!-- Sombras suaves -->
+    <ellipse cx="32" cy="60" rx="10" ry="2" fill="#00000022"/>
+</svg>

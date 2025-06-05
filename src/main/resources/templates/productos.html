@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <title>Listado de Productos</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <h2>Productos</h2>
+  <a class="btn btn-primary mb-3" th:href="@{/productos/nuevo}">+ Nuevo Producto</a>
+
+  <table class="table table-bordered">
+    <thead class="table-light">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>Stock</th>
+      <th>Categoría</th>
+      <th>Estado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="producto : ${productos}">
+      <td th:text="${producto.id}"></td>
+      <td th:text="${producto.nombre}"></td>
+      <td th:text="${producto.precio}"></td>
+      <td th:text="${producto.stock}"></td>
+      <td th:text="${#lists.find(categorias, c -> c.id == producto.categoriaId)?.nombre} ?: 'Sin categoría'"></td>
+      <td>
+        <span th:text="${producto.activo} ? 'Activo' : 'Inactivo'"></span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

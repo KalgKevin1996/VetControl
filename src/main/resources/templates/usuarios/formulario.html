@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<section>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <img th:src="@{/img/pokemon/usuarios/nurse_joy.svg}" alt="Formulario de Usuario" width="80">
+                            <h3 class="text-primary mt-3">Gestión de Usuario</h3>
+                        </div>
+
+                        <form th:action="@{/usuarios/guardar}" method="post" th:object="${usuario}" id="formUsuario">
+                            <input type="hidden" th:field="*{id}" />
+
+                            <div class="mb-3">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" th:field="*{nombre}" class="form-control" required>
+                                <div class="text-danger small" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label class="form-label">Apellido</label>
+                                <input type="text" th:field="*{apellido}" class="form-control" required>
+                                <div class="text-danger small" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label class="form-label">Correo Electrónico</label>
+                                <input type="email" th:field="*{email}" class="form-control" required>
+                                <div class="text-danger small" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label class="form-label">Rol</label>
+                                <select th:field="*{rol}" class="form-select" required>
+                                    <option value="" disabled>Seleccione un rol</option>
+                                    <option value="ADMIN">Administrador</option>
+                                    <option value="OPERADOR">Operador</option>
+                                </select>
+                                <div class="text-danger small" th:if="${#fields.hasErrors('rol')}" th:errors="*{rol}"></div>
+                            </div>
+
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" th:field="*{activo}" class="form-check-input" id="activo">
+                                <label class="form-check-label" for="activo">Activo</label>
+                            </div>
+
+                            <div class="mb-3 position-relative">
+                                <label class="form-label">Contraseña</label>
+                                <div class="input-group">
+                                    <input type="password" th:field="*{password}" class="form-control" id="password" required>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePassword('password')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="text-danger small" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label class="form-label">Confirmar Contraseña</label>
+                                <input type="password" th:field="*{confirmPassword}" class="form-control" id="confirmPassword" required>
+                                <div class="text-danger small" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></div>
+                            </div>
+
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary w-50">
+                                    <i class="bi bi-save me-1"></i> Guardar
+                                </button>
+                            </div>
+                        </form>
+
+                        <div id="errorContraseña" class="alert alert-danger mt-3 d-none">
+                            <i class="bi bi-exclamation-triangle-fill"></i> Las contraseñas no coinciden.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/js/validacion_usuario.js}"></script>
+</section>
+</html>

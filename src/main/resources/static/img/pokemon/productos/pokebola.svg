@@ -1,0 +1,16 @@
+<svg viewBox="0 0 200 200" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Mitad superior (roja) -->
+    <path d="M10,100 A90,90 0 0,1 190,100" fill="red" stroke="black" stroke-width="4"/>
+
+    <!-- Mitad inferior (blanca) -->
+    <path d="M10,100 A90,90 0 0,0 190,100" fill="white" stroke="black" stroke-width="4"/>
+
+    <!-- Línea divisoria -->
+    <line x1="10" y1="100" x2="190" y2="100" stroke="black" stroke-width="4"/>
+
+    <!-- Círculo central blanco -->
+    <circle cx="100" cy="100" r="20" fill="white" stroke="black" stroke-width="4"/>
+
+    <!-- Círculo interior negro -->
+    <circle cx="100" cy="100" r="8" fill="black"/>
+</svg>

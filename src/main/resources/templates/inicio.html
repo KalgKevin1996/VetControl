@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio - VetControl</title>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background-color 0.5s ease;
+    }
+
+    .fade-in {
+      animation: fadeIn ease 1.5s;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity:0; transform: translateY(20px); }
+      100% { opacity:1; transform: translateY(0); }
+    }
+
+    .hero {
+      background: linear-gradient(to right, #0d6efd, #6610f2);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      border-bottom: 5px solid #fff;
+      transition: background 0.5s ease;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin-top: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .btn-principal {
+      background-color: #ffffff;
+      color: #0d6efd;
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      margin-top: 25px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-principal:hover {
+      background-color: #e2e6ea;
+      transform: scale(1.05);
+    }
+
+    .info {
+      padding: 60px 0;
+      background-color: #ffffff;
+      transition: background-color 0.5s ease;
+    }
+
+    .info h2 {
+      font-weight: bold;
+      color: #343a40;
+      transition: color 0.3s ease;
+    }
+
+    .info p {
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .info .icon-box {
+      padding: 30px 20px;
+      border-radius: 10px;
+      background-color: #f1f3f5;
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info .icon-box:hover {
+      background-color: #e9ecef;
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #ced4da;
+      padding: 20px 0;
+      text-align: center;
+      transition: background-color 0.5s ease, color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ✅ Navbar -->
+<div th:replace="~{fragments/navbar :: navbar}"></div>
+
+<!-- 🔷 Sección principal con animación -->
+<section class="hero fade-in">
+  <div class="container">
+    <h1>Bienvenido a VetControl</h1>
+    <p>Gestión moderna de inventario para clínicas y tiendas veterinarias</p>
+    <a th:href="@{/login}" class="btn btn-principal">Iniciar Sesión</a>
+  </div>
+</section>
+
+<!-- 🐾 Beneficios del sistema -->
+<section class="info fade-in">
+  <div class="container text-center">
+    <h2 class="mb-4">¿Por qué elegir VetControl?</h2>
+    <p class="lead mb-5">Tu sistema de confianza para controlar productos, entradas/salidas y reportes inteligentes.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="icon-box shadow-sm">
+          <h4>📦 Control Total</h4>
+          <p>Administra tu inventario con exactitud y actualizaciones en tiempo real.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box shadow-sm">
+          <h4>📈 Reportes Visuales</h4>
+          <p>Visualiza el comportamiento de tu stock con gráficos y exportación a PDF o Excel.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="icon-box shadow-sm">
+          <h4>🔒 Seguridad</h4>
+          <p>Accesos protegidos con roles personalizados y autenticación segura.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p class="mb-0">© 2025 VetControl - Todos los derechos reservados</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+    <!-- Fondo -->
+    <rect width="64" height="64" rx="12" fill="#e3f2fd"/>
+
+    <!-- Marco del gráfico -->
+    <rect x="12" y="12" width="40" height="40" fill="#ffffff" stroke="#90caf9" stroke-width="2" rx="4"/>
+
+    <!-- Líneas base del gráfico -->
+    <line x1="18" y1="46" x2="46" y2="46" stroke="#90caf9" stroke-width="1"/>
+    <line x1="18" y1="46" x2="18" y2="20" stroke="#90caf9" stroke-width="1"/>
+
+    <!-- Barras estilo Pokémon -->
+    <rect x="20" y="34" width="6" height="12" fill="#ef5350" rx="1"/>
+    <rect x="28" y="30" width="6" height="16" fill="#66bb6a" rx="1"/>
+    <rect x="36" y="24" width="6" height="22" fill="#42a5f5" rx="1"/>
+    <rect x="44" y="28" width="6" height="18" fill="#ffb74d" rx="1"/>
+
+    <!-- Pokébola decorativa -->
+    <circle cx="48" cy="16" r="6" fill="white" stroke="#c62828" stroke-width="2"/>
+    <line x1="42" y1="16" x2="54" y2="16" stroke="#c62828" stroke-width="1.5"/>
+    <circle cx="48" cy="16" r="2" fill="#c62828"/>
+
+    <!-- Sombra inferior -->
+    <ellipse cx="32" cy="60" rx="10" ry="2" fill="#00000022"/>
+</svg>

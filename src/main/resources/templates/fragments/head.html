@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <title th:text="${title}">Dashboard</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        h2 { font-size: 2.2rem; font-weight: 700; color: #007bff; }
+        .card-title { font-size: 1.25rem; font-weight: bold; }
+        .card { border-radius: 0.5rem; }
+        canvas { max-width: 100%; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+</html>

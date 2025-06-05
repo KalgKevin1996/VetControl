@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${categoriaDTO.id == null} ? 'Nueva Categoría' : 'Editar Categoría'">Formulario Categoría</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="container mt-5">
+  <h2 th:text="${categoriaDTO.id == null} ? 'Nueva Categoría' : 'Editar Categoría'"></h2>
+
+  <form th:action="${categoriaDTO.id == null} ? @{/categorias/guardar} : @{/categorias/actualizar/{id}(id=${categoriaDTO.id})}"
+        th:object="${categoriaDTO}" method="post">
+
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" th:field="*{nombre}" class="form-control" id="nombre" placeholder="Ej. Alimentos">
+      <div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+    </div>
+
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <textarea th:field="*{descripcion}" class="form-control" id="descripcion" rows="3"
+                placeholder="Descripción de la categoría"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a th:href="@{/categorias}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+</body>
+</html>

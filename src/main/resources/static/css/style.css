@@ -1,0 +1,89 @@
+
+/* === VetControl - Tema Pokémon === */
+
+body {
+    background: linear-gradient(120deg, #f2f2f2, #ffeaa7);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2d3436;
+}
+
+/* Navbar estilo Pikachu */
+.navbar {
+    background-color: #feca1b; /* Amarillo Pikachu */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #d63031 !important; /* Rojo tipo fuego */
+}
+
+.navbar-nav .nav-link {
+    color: #2d3436;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #d63031;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #0984e3; /* Azul Squirtle */
+    border: none;
+    border-radius: 0.6rem;
+    font-weight: bold;
+}
+
+.btn-outline-light {
+    color: #2d3436;
+    border-color: #2d3436;
+    font-weight: bold;
+}
+
+.btn-outline-light:hover {
+    background-color: #ffeaa7;
+    color: #d63031;
+    border-color: #d63031;
+}
+
+/* Tarjetas estilo Pokébola */
+.card {
+    border-radius: 1rem;
+    border: 2px solid #d63031;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+/* Tablas */
+.table th {
+    background-color: #55efc4; /* Verde tipo planta */
+    color: #2d3436;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+/* Footer */
+footer {
+    background-color: #2d3436;
+    color: #ffeaa7;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Iconos decorativos (usando emojis como pokéballs, si se desea) */
+.icono-poke {
+    font-size: 1.2rem;
+    margin-right: 0.4rem;
+}

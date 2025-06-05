@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es" th:fragment="layout(contenido)">
+<head>
+  <meta charset="UTF-8">
+  <title>VetControl</title>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<!-- Contenido principal -->
+<div class="container mt-4">
+  <main th:insert="${contenido}"></main>
+</div>
+
+</body>
+</html>
